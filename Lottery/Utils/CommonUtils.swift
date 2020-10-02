@@ -22,6 +22,10 @@ class CommonUtils {
         return UIStoryboard(name:"Main",bundle: Bundle.main)
     }
     
+    static var ticketStoryboard: UIStoryboard{
+        return UIStoryboard(name:"SoldTicket",bundle: Bundle.main)
+    }
+    
     static func isOnline()-> Bool {
         return Reachability()?.connection.description != "No Connection"
     }
@@ -43,4 +47,19 @@ class CommonUtils {
         return defults.value(forKey: key)
     }
     
+   //MARK:- Get storage Values
+    static var userName: String? {
+        let userName = getValueStringFromDefaults(key: Constants.StorageKeys.userName)
+        return userName.isEmpty ? nil: userName
+    }
+    
+    static var password: String? {
+        let password = getValueStringFromDefaults(key: userName ?? "")
+        return password.isEmpty ? nil: password
+    }
+    
+    static var userDetailsModel: UserDataModel? {
+        let key = "\(userName ?? "")_\(password ?? "")"
+        return getValueFromDefaults(key: key) as? UserDataModel
+    }
 }

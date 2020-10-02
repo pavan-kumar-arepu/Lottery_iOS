@@ -12,6 +12,11 @@ enum ApiResponse {
     case failure(Error)
 }
 
+enum Result<Value> {
+    case success(Value)
+    case failure(Error)
+}
+
 protocol responseError: Error {
     var description: String { get }
 }
@@ -41,7 +46,7 @@ class ApiHandler {
             return
         }
         let url = NSURL(string: urlString)
-        let request = NSMutableURLRequest(url: url! as URL)
+        let request = NSMutableURLRequest(url: url! as URL, cachePolicy:.useProtocolCachePolicy, timeoutInterval: 10.0)
         request.addValues(values: headers)
         request.httpMethod = httpMethode.rawValue
         if let parametrs = parameters {

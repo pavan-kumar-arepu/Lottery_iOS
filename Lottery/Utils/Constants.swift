@@ -19,7 +19,22 @@ struct Constants {
     }
     
     struct UrlManager {
-        static let loginApi = ""
+        static let loginApi = "http://155.138.208.35:82/lottory/login_api?"
+        static let submitDetailsApi = "http://155.138.208.35:82/lottory/sold_tickets_api?"
+        static let dashBoardApi = "http://155.138.208.35:82/lottory/user_authenticte_api?"
+        
+        static func loginApi(with number: String, password: String)-> String {
+            return "\(loginApi)\(number)&password=\(password)"
+        }
+        
+        static func soldTicketApi(ticketDetails: TiketDetails, userId: String)-> String {
+            return "\(submitDetailsApi)lot_id=\(ticketDetails.lotId)&booklet_series=\(ticketDetails.bookletSeries)&booklet_number=\(ticketDetails.bookletNumber)&user_id=\(userId)&ticket_number=\(ticketDetails.ticketNumber)"
+        }
+        
+        static func dashBoardApi(with number: String, password: String)-> String {
+            return "\(dashBoardApi)\(number)&password=\(password)"
+        }
+        
     }
     
     

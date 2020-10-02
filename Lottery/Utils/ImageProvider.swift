@@ -8,7 +8,7 @@ import UIKit
 
 class ImageProvider {
     static var closeIcon: UIImage? {
-        return nil
+        return UIImage.init(named: "close")
     }
     
     static var backIcon: UIImage? {

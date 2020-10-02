@@ -86,7 +86,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRU-Br-Rqa">
                                                                 <rect key="frame" x="45" y="0.0" width="319" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xZ9-WB-39i"/>
                                                                 </connections>
@@ -121,16 +121,32 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVA-ae-YHB">
+                                                        <rect key="frame" x="10" y="126" width="128" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" red="0.86666666670000003" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter mobile number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKv-Xs-44t">
+                                                        <rect key="frame" x="10" y="51" width="158" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" red="0.86666666670000003" green="0.1176470588" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="125" id="6KN-Tz-Cg1"/>
                                                     <constraint firstAttribute="trailing" secondItem="7XM-0h-LbG" secondAttribute="trailing" id="AnS-6p-cN5"/>
                                                     <constraint firstAttribute="trailing" secondItem="rNR-J6-VKI" secondAttribute="trailing" id="BKa-ba-s0V"/>
+                                                    <constraint firstItem="YKv-Xs-44t" firstAttribute="leading" secondItem="7XM-0h-LbG" secondAttribute="leading" constant="10" id="Oyf-zD-93x"/>
                                                     <constraint firstItem="7XM-0h-LbG" firstAttribute="leading" secondItem="Jhe-xH-JVC" secondAttribute="leading" id="cxG-cd-joz"/>
+                                                    <constraint firstItem="YKv-Xs-44t" firstAttribute="top" secondItem="7XM-0h-LbG" secondAttribute="bottom" constant="1" id="env-oC-OHw"/>
                                                     <constraint firstItem="7XM-0h-LbG" firstAttribute="top" secondItem="Jhe-xH-JVC" secondAttribute="top" id="iTx-yA-rKb"/>
                                                     <constraint firstAttribute="bottom" secondItem="rNR-J6-VKI" secondAttribute="bottom" id="ij1-Kh-wNL"/>
                                                     <constraint firstItem="rNR-J6-VKI" firstAttribute="leading" secondItem="Jhe-xH-JVC" secondAttribute="leading" id="uOy-6s-pgI"/>
+                                                    <constraint firstItem="sVA-ae-YHB" firstAttribute="top" secondItem="rNR-J6-VKI" secondAttribute="bottom" constant="1" id="wpv-pa-hVT"/>
+                                                    <constraint firstItem="sVA-ae-YHB" firstAttribute="leading" secondItem="YKv-Xs-44t" secondAttribute="leading" id="x8R-E1-VrP"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-aa-vn9">
@@ -189,6 +205,7 @@
                                             <constraint firstItem="Jhe-xH-JVC" firstAttribute="centerX" secondItem="aSi-Cw-o8J" secondAttribute="centerX" id="2Ge-c8-4ru"/>
                                             <constraint firstAttribute="trailing" secondItem="Jhe-xH-JVC" secondAttribute="trailing" constant="25" id="Ba8-t2-smV"/>
                                             <constraint firstItem="Jhe-xH-JVC" firstAttribute="centerY" secondItem="aSi-Cw-o8J" secondAttribute="centerY" id="Gwh-Nc-iRR"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1AG-aa-vn9" secondAttribute="trailing" constant="20" symbolic="YES" id="HS2-hn-XCt"/>
                                             <constraint firstItem="Jhe-xH-JVC" firstAttribute="top" secondItem="1AG-aa-vn9" secondAttribute="bottom" constant="25" id="NKJ-6t-NUa"/>
                                             <constraint firstItem="1AG-aa-vn9" firstAttribute="top" secondItem="y1q-FH-dwK" secondAttribute="bottom" constant="10" id="S1N-lb-oKc"/>
                                             <constraint firstItem="y1q-FH-dwK" firstAttribute="leading" secondItem="1AG-aa-vn9" secondAttribute="leading" id="SAj-0t-Kwp"/>
@@ -196,6 +213,7 @@
                                             <constraint firstItem="Jhe-xH-JVC" firstAttribute="leading" secondItem="aSi-Cw-o8J" secondAttribute="leading" constant="25" id="da3-ad-SCs"/>
                                             <constraint firstItem="1AG-aa-vn9" firstAttribute="leading" secondItem="Jhe-xH-JVC" secondAttribute="leading" id="hTY-JT-Hec"/>
                                             <constraint firstItem="8ea-6b-8GE" firstAttribute="trailing" secondItem="Jhe-xH-JVC" secondAttribute="trailing" id="j3k-p4-NIr"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y1q-FH-dwK" secondAttribute="trailing" constant="20" symbolic="YES" id="veY-9T-OJE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -225,8 +243,10 @@
                     <connections>
                         <outlet property="mobileNumberTf" destination="FqJ-WF-VYT" id="xs6-w0-KMB"/>
                         <outlet property="mobileNumberView" destination="7XM-0h-LbG" id="GUL-R5-D0e"/>
+                        <outlet property="mobileWarningLabel" destination="YKv-Xs-44t" id="Lbg-hQ-ZM9"/>
                         <outlet property="passwordTf" destination="FRU-Br-Rqa" id="F5S-qr-4mT"/>
                         <outlet property="passwordView" destination="rNR-J6-VKI" id="IeF-LE-3vo"/>
+                        <outlet property="passwordWarningLabel" destination="sVA-ae-YHB" id="0bD-Ge-JjQ"/>
                         <outlet property="scrollView" destination="sv4-nT-tvo" id="n7q-ek-Cax"/>
                     </connections>
                 </viewController>

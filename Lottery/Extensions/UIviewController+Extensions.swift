@@ -6,36 +6,32 @@
 
 import UIKit
 extension UIViewController {
-    static var activityIndicatorTag = 12345
     
-    func startLoading() {
-        stopLoading()
-        
-        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-        activityIndicator.tag = UIViewController.activityIndicatorTag
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
+    func startIndicator(indicator: UIActivityIndicatorView) {
+        self.view.isUserInteractionEnabled = false
+        indicator.center = view.center
+        indicator.hidesWhenStopped = true
         if #available(iOS 13.0, *) {
-            activityIndicator.style = UIActivityIndicatorView.Style.large
+            indicator.style = UIActivityIndicatorView.Style.large
         } else {
             // Fallback on earlier versions
         }
-        activityIndicator.color = UIColor.gray
+        indicator.color = UIColor.black
         
         DispatchQueue.main.async {
-            self.view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
+            self.view.addSubview(indicator)
+            indicator.startAnimating()
         }
     }
     
-    func stopLoading() {
-        let activityIndicator = view.viewWithTag(UIViewController.activityIndicatorTag) as? UIActivityIndicatorView
+    func stopIndicator(indicator: UIActivityIndicatorView) {
         DispatchQueue.main.async {
-            activityIndicator?.stopAnimating()
-            activityIndicator?.removeFromSuperview()
+            indicator.stopAnimating()
+            indicator.removeFromSuperview()
+            self.view.isUserInteractionEnabled = true
         }
     }
-    
+  
     func showOkayAlert(title: String , message : String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -57,6 +53,18 @@ extension UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func startLoadingIndicator(indicator: ActivityIndicatorService) {
+        DispatchQueue.main.async {
+            indicator.showActivityIndicator(viewController: self)
+        }
+    }
+    
+    func stopLoadingIndicator(indicator: ActivityIndicatorService) {
+        DispatchQueue.main.async {
+            indicator.hideActivityIndicator(viewController: self)
+        }
     }
     
 }

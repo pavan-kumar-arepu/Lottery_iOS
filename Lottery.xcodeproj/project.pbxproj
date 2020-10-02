@@ -25,6 +25,23 @@
 		312F71BE25219E48003D1AE2 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F71BD25219E48003D1AE2 /* CommonUtils.swift */; };
 		312F71C22521A14B003D1AE2 /* AppSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F71C12521A14B003D1AE2 /* AppSingleton.swift */; };
 		312F71C42521A52E003D1AE2 /* UIApplication + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F71C32521A52E003D1AE2 /* UIApplication + Extensions.swift */; };
+		316B4CB325259316009670F5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB225259316009670F5 /* DashboardViewController.swift */; };
+		316B4CBF2525973A009670F5 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB525259739009670F5 /* ToggleTorchButton.swift */; };
+		316B4CC02525973A009670F5 /* QRCodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB625259739009670F5 /* QRCodeReaderView.swift */; };
+		316B4CC12525973A009670F5 /* QRCodeReaderViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB725259739009670F5 /* QRCodeReaderViewControllerBuilder.swift */; };
+		316B4CC22525973A009670F5 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB825259739009670F5 /* QRCodeReader.swift */; };
+		316B4CC32525973A009670F5 /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CB925259739009670F5 /* ReaderOverlayView.swift */; };
+		316B4CC42525973A009670F5 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CBA2525973A009670F5 /* SwitchCameraButton.swift */; };
+		316B4CC52525973A009670F5 /* QRCodeReaderViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CBB2525973A009670F5 /* QRCodeReaderViewContainer.swift */; };
+		316B4CC62525973A009670F5 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CBC2525973A009670F5 /* QRCodeReaderViewController.swift */; };
+		316B4CC72525973A009670F5 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CBD2525973A009670F5 /* QRCodeReaderResult.swift */; };
+		316B4CC82525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CBE2525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift */; };
+		316B4CCA252597BE009670F5 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B4CC9252597BE009670F5 /* ScanCodeViewController.swift */; };
+		3181AE11252458EA00C66C7C /* SoldTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181AE10252458EA00C66C7C /* SoldTicketViewController.swift */; };
+		3181AE13252458FC00C66C7C /* SoldTicket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3181AE12252458FC00C66C7C /* SoldTicket.storyboard */; };
+		3181AE1525245B8900C66C7C /* SoldTicketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181AE1425245B8900C66C7C /* SoldTicketPresenter.swift */; };
+		3181AE192524858B00C66C7C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181AE182524858B00C66C7C /* WebViewController.swift */; };
+		3181AE1B25248E4300C66C7C /* ActivityIndicatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181AE1A25248E4300C66C7C /* ActivityIndicatorService.swift */; };
 		31DA8A8125226B5E00F9D71A /* CustomeView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA8A8025226B5E00F9D71A /* CustomeView+IBDesignable.swift */; };
 		31DA8A8325236FE200F9D71A /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA8A8225236FE200F9D71A /* LoginProtocols.swift */; };
 		31DA8A8525236FF100F9D71A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA8A8425236FF100F9D71A /* LoginRouter.swift */; };
@@ -75,6 +92,23 @@
 		312F71BD25219E48003D1AE2 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		312F71C12521A14B003D1AE2 /* AppSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSingleton.swift; sourceTree = "<group>"; };
 		312F71C32521A52E003D1AE2 /* UIApplication + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extensions.swift"; sourceTree = "<group>"; };
+		316B4CB225259316009670F5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		316B4CB525259739009670F5 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
+		316B4CB625259739009670F5 /* QRCodeReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderView.swift; sourceTree = "<group>"; };
+		316B4CB725259739009670F5 /* QRCodeReaderViewControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerBuilder.swift; sourceTree = "<group>"; };
+		316B4CB825259739009670F5 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		316B4CB925259739009670F5 /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		316B4CBA2525973A009670F5 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		316B4CBB2525973A009670F5 /* QRCodeReaderViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewContainer.swift; sourceTree = "<group>"; };
+		316B4CBC2525973A009670F5 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		316B4CBD2525973A009670F5 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
+		316B4CBE2525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewControllerDelegate.swift; sourceTree = "<group>"; };
+		316B4CC9252597BE009670F5 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
+		3181AE10252458EA00C66C7C /* SoldTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldTicketViewController.swift; sourceTree = "<group>"; };
+		3181AE12252458FC00C66C7C /* SoldTicket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SoldTicket.storyboard; sourceTree = "<group>"; };
+		3181AE1425245B8900C66C7C /* SoldTicketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldTicketPresenter.swift; sourceTree = "<group>"; };
+		3181AE182524858B00C66C7C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3181AE1A25248E4300C66C7C /* ActivityIndicatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorService.swift; sourceTree = "<group>"; };
 		31DA8A8025226B5E00F9D71A /* CustomeView+IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomeView+IBDesignable.swift"; sourceTree = "<group>"; };
 		31DA8A8225236FE200F9D71A /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		31DA8A8425236FF100F9D71A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
@@ -165,6 +199,7 @@
 		312F71AD25219A84003D1AE2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				316B4CB42525972E009670F5 /* QRCodeView */,
 				312F71AE25219A93003D1AE2 /* Reachability.swift */,
 				312F71B525219C1B003D1AE2 /* KeyboardAvoidance.swift */,
 				312F71B725219C51003D1AE2 /* ImageProvider.swift */,
@@ -190,8 +225,6 @@
 			children = (
 				31DA8A7F25226AEF00F9D71A /* Login */,
 				31DA8A8C2523739200F9D71A /* SoldTicket */,
-				31DA8A8E252373C000F9D71A /* ScanCode */,
-				31DA8A8D252373AA00F9D71A /* GoToDashboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -199,10 +232,28 @@
 		312F71C02521A12A003D1AE2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3181AE1A25248E4300C66C7C /* ActivityIndicatorService.swift */,
 				312F71B925219D7E003D1AE2 /* APIHandler.swift */,
 				312F71C12521A14B003D1AE2 /* AppSingleton.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		316B4CB42525972E009670F5 /* QRCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				316B4CB825259739009670F5 /* QRCodeReader.swift */,
+				316B4CBD2525973A009670F5 /* QRCodeReaderResult.swift */,
+				316B4CB625259739009670F5 /* QRCodeReaderView.swift */,
+				316B4CBB2525973A009670F5 /* QRCodeReaderViewContainer.swift */,
+				316B4CBC2525973A009670F5 /* QRCodeReaderViewController.swift */,
+				316B4CB725259739009670F5 /* QRCodeReaderViewControllerBuilder.swift */,
+				316B4CBE2525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift */,
+				316B4CB925259739009670F5 /* ReaderOverlayView.swift */,
+				316B4CBA2525973A009670F5 /* SwitchCameraButton.swift */,
+				316B4CB525259739009670F5 /* ToggleTorchButton.swift */,
+			);
+			path = QRCodeView;
 			sourceTree = "<group>";
 		};
 		31DA8A7F25226AEF00F9D71A /* Login */ = {
@@ -222,6 +273,11 @@
 		31DA8A8C2523739200F9D71A /* SoldTicket */ = {
 			isa = PBXGroup;
 			children = (
+				3181AE10252458EA00C66C7C /* SoldTicketViewController.swift */,
+				3181AE12252458FC00C66C7C /* SoldTicket.storyboard */,
+				3181AE1425245B8900C66C7C /* SoldTicketPresenter.swift */,
+				31DA8A8E252373C000F9D71A /* ScanCode */,
+				31DA8A8D252373AA00F9D71A /* GoToDashboard */,
 			);
 			path = SoldTicket;
 			sourceTree = "<group>";
@@ -229,6 +285,8 @@
 		31DA8A8D252373AA00F9D71A /* GoToDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				3181AE182524858B00C66C7C /* WebViewController.swift */,
+				316B4CB225259316009670F5 /* DashboardViewController.swift */,
 			);
 			path = GoToDashboard;
 			sourceTree = "<group>";
@@ -236,6 +294,7 @@
 		31DA8A8E252373C000F9D71A /* ScanCode */ = {
 			isa = PBXGroup;
 			children = (
+				316B4CC9252597BE009670F5 /* ScanCodeViewController.swift */,
 			);
 			path = ScanCode;
 			sourceTree = "<group>";
@@ -346,6 +405,7 @@
 			files = (
 				312F718A25219A29003D1AE2 /* LaunchScreen.storyboard in Resources */,
 				312F718725219A29003D1AE2 /* Assets.xcassets in Resources */,
+				3181AE13252458FC00C66C7C /* SoldTicket.storyboard in Resources */,
 				312F718525219A28003D1AE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,25 +431,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316B4CC32525973A009670F5 /* ReaderOverlayView.swift in Sources */,
 				312F718225219A28003D1AE2 /* LoginViewController.swift in Sources */,
 				312F71C22521A14B003D1AE2 /* AppSingleton.swift in Sources */,
+				3181AE1525245B8900C66C7C /* SoldTicketPresenter.swift in Sources */,
+				316B4CC42525973A009670F5 /* SwitchCameraButton.swift in Sources */,
 				312F71B625219C1B003D1AE2 /* KeyboardAvoidance.swift in Sources */,
+				3181AE1B25248E4300C66C7C /* ActivityIndicatorService.swift in Sources */,
+				316B4CC72525973A009670F5 /* QRCodeReaderResult.swift in Sources */,
 				312F717E25219A28003D1AE2 /* AppDelegate.swift in Sources */,
 				31DA8A8B2523738500F9D71A /* LoginEntity.swift in Sources */,
+				316B4CC62525973A009670F5 /* QRCodeReaderViewController.swift in Sources */,
+				316B4CC52525973A009670F5 /* QRCodeReaderViewContainer.swift in Sources */,
+				316B4CCA252597BE009670F5 /* ScanCodeViewController.swift in Sources */,
 				312F71BE25219E48003D1AE2 /* CommonUtils.swift in Sources */,
 				312F71AF25219A93003D1AE2 /* Reachability.swift in Sources */,
+				316B4CC82525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				31DA8A8525236FF100F9D71A /* LoginRouter.swift in Sources */,
 				31DA8A8325236FE200F9D71A /* LoginProtocols.swift in Sources */,
 				31DA8A892523700800F9D71A /* LoginInteractor.swift in Sources */,
 				312F71B825219C51003D1AE2 /* ImageProvider.swift in Sources */,
 				31DA8A8725236FFB00F9D71A /* LoginPresenter.swift in Sources */,
 				312F71BC25219DA3003D1AE2 /* Constants.swift in Sources */,
+				3181AE192524858B00C66C7C /* WebViewController.swift in Sources */,
+				316B4CBF2525973A009670F5 /* ToggleTorchButton.swift in Sources */,
 				312F71B225219B74003D1AE2 /* UIviewController+Extensions.swift in Sources */,
+				316B4CB325259316009670F5 /* DashboardViewController.swift in Sources */,
+				316B4CC02525973A009670F5 /* QRCodeReaderView.swift in Sources */,
 				312F71BA25219D7E003D1AE2 /* APIHandler.swift in Sources */,
+				316B4CC12525973A009670F5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				31DA8A8125226B5E00F9D71A /* CustomeView+IBDesignable.swift in Sources */,
 				312F718025219A28003D1AE2 /* SceneDelegate.swift in Sources */,
 				312F71C42521A52E003D1AE2 /* UIApplication + Extensions.swift in Sources */,
+				3181AE11252458EA00C66C7C /* SoldTicketViewController.swift in Sources */,
 				312F71B425219B98003D1AE2 /* UIColor+Additions.swift in Sources */,
+				316B4CC22525973A009670F5 /* QRCodeReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,12 +639,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lottery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = App.Lottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketApp.lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -579,14 +657,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lottery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = App.Lottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ticketApp.lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

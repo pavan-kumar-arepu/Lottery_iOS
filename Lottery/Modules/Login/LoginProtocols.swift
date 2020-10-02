@@ -8,17 +8,26 @@
 
 import Foundation
 protocol LoginViewToPresenterProtocol: class {
-    func signInTapped(userName: String?, password: String?)
+    func signInTapped(userName: String?, password: String?)-> LoginValidationResult
+    func loginApi(using mobileNumbver: String, password: String)
 }
 
 protocol LoginPresenterToViewProtocol: class {
-    
+    func loginApiResult(result: Result<LoginEntityModel>)
 }
 
 protocol LoginPresenterToInteractor: class {
-    
+    func loginApi(using mobileNumbver: String, password: String)
 }
 
 protocol LoginInteractorToPresenter: class {
-    
+    func loginApiResult(result: Result<LoginEntityModel>)
+}
+
+enum LoginValidationFields {
+    case mobileNumber, password
+}
+
+enum LoginValidationResult {
+    case success, failure(LoginValidationFields)
 }

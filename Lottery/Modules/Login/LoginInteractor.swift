@@ -9,4 +9,28 @@
 import Foundation
 class LoginInteractor: LoginPresenterToInteractor {
     var presenter: LoginPresenter?
+    
+    func loginApi(using mobileNumbver: String, password: String) {
+        guard CommonUtils.isOnline() else {
+             self.presenter?.outPuts?.loginApiResult(result: .failure(apiHandlerErrors.noNetWork))
+            return
+        }
+        ApiHandler.handleApi(with: .get, urlString: Constants.UrlManager.loginApi(with: mobileNumbver, password: password), headers: ["Content-Type": "application/json", "Accept": "application/json"], parameters: nil) { result in
+            switch result {
+            case .success(let data):
+                if let responseData = data, let resultModel = try? JSONDecoder().decode(LoginEntityModel.self, from: responseData), let userData = resultModel.data {
+                    //Storing UserDetails
+                    CommonUtils.saveDefaults(key: Constants.StorageKeys.userName, value: mobileNumbver)
+                    CommonUtils.saveDefaults(key: mobileNumbver, value: password)
+                    CommonUtils.saveDefaults(key: "\(mobileNumbver)_\(password)", value: userData)
+                    
+                    self.presenter?.outPuts?.loginApiResult(result: .success(resultModel))
+                } else{
+                    self.presenter?.outPuts?.loginApiResult(result: .failure(apiHandlerErrors.inValidRequest))
+                }
+            case .failure(let error):
+                self.presenter?.outPuts?.loginApiResult(result: .failure(error))
+            }
+        }
+    }
 }

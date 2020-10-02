@@ -11,14 +11,28 @@ class LoginPresenter: LoginViewToPresenterProtocol, LoginInteractorToPresenter {
     var inputs: LoginViewToPresenterProtocol {
         return self
     }
+    var outPuts: LoginInteractorToPresenter? {
+        return self
+    }
     var view: LoginPresenterToViewProtocol?
     var interactor: LoginPresenterToInteractor?
     
-    func signInTapped(userName: String?, password: String?) {
-        
+    func signInTapped(userName: String?, password: String?)-> LoginValidationResult {
+        guard let mobileNumber = userName, mobileNumber.count == 10  else {
+            return .failure(.mobileNumber)
+        }
+        guard let passwordString = password, !passwordString.isEmpty else {
+            return .failure(.password)
+        }
+        return .success
     }
     
-    func validateSignIn()-> Bool {
-        return false
+    func loginApi(using mobileNumbver: String, password: String) {
+        self.interactor?.loginApi(using: mobileNumbver, password: password)
     }
+    
+    func loginApiResult(result: Result<LoginEntityModel>) {
+        self.view?.loginApiResult(result: result)
+    }
+    
 }

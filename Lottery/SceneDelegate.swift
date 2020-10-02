@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
         let window = UIWindow(windowScene: windowScene)
         /// 3. Create a view hierarchy programmatically
-        let navigation = UINavigationController(rootViewController: LoginRouter.createLoginModule())
+        let navigation = UINavigationController(rootViewController: validateUser())
         
         /// 4. Set the root view controller of the window with your view controller
         window.rootViewController = navigation
@@ -28,6 +28,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// 5. Set the window and call makeKeyAndVisible()
         self.window = window
         window.makeKeyAndVisible()
+    }
+    
+    private func validateUser()-> UIViewController {
+        if CommonUtils.userName != nil {
+            guard let vc = CommonUtils.ticketStoryboard.instantiateViewController(identifier: "SoldTicketViewController")as? SoldTicketViewController else{
+                preconditionFailure("Unable to get ViewController")
+            }
+            return vc
+        } else {
+            return LoginRouter.createLoginModule()
+        }
     }
    
     func sceneDidDisconnect(_ scene: UIScene) {
