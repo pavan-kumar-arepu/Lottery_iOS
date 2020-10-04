@@ -127,7 +127,7 @@ extension SoldTicketViewController : ScanCodeResultDelegate {
                     self.showOkayAlert(title: "Error", message: responseDict["error_msg"] as? String ?? Constants.AlertMessages.inValidaRequests)
                 } else {
                     self.clearFields()
-                    self.showOkayAlert(title: "Success", message: "Successfully submitted ticket details.")
+                    self.showOkayAlert(title: "Success", message: responseDict["msg"] as? String ?? "Successfully submitted ticket details.")
                 }
             case .failure(let error):
                 if let errorIs = error as? apiHandlerErrors {
