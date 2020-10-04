@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 enum ApiResponse {
-    case success(Data?)
+    case success(Data?, [String: Any])
     case failure(Error)
 }
 
@@ -55,16 +55,16 @@ class ApiHandler {
             request.httpBody = jsonData
         }
         let task = URLSession.shared.dataTask(with: request as URLRequest){ data,response,error in
-            if let responseData = data, let dict = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers) as? NSDictionary {
-                debugPrint("\(urlString) response", dict)
-            }
             if let responseError = error {
                 completionHandler(ApiResponse.failure(responseError))
-            } else if let responseData = data {
-                completionHandler(ApiResponse.success(responseData))
-            } else {
-                completionHandler(ApiResponse.failure(apiHandlerErrors.inValidRequest))
+                return
             }
+            guard let responseData = data, let json = try? JSONSerialization.jsonObject(with: responseData, options: .mutableContainers) as? [String: Any] else {
+                completionHandler(ApiResponse.failure(apiHandlerErrors.inValidRequest))
+                return
+            }
+            debugPrint("\(urlString) response", json)
+            completionHandler(ApiResponse.success(responseData, json))
         }
         task.resume()
     }

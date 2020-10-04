@@ -37,6 +37,7 @@ class ActivityIndicatorService {
         
         activityIndicator.frame = CGRect.init(x: loadingView.frame.size.width/2 - 20, y: loadingView.frame.size.height/2 - 20, width: 40.0, height: 40.0)
         activityIndicator.style = UIActivityIndicatorView.Style.large
+        activityIndicator.color = UIColor.colourPrimary
         
         loadingView.addSubview(activityIndicator)
         container.addSubview(loadingView)

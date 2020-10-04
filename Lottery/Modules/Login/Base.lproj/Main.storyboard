@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -166,6 +167,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right.to.line" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uNm-Q9-u0p">
                                                         <rect key="frame" x="80" y="12" width="30" height="25"/>
+                                                        <color key="tintColor" name="ColorPrimary"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="Qjz-uV-KlJ"/>
                                                         </constraints>
@@ -178,6 +180,7 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-00-IcT">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="50"/>
+                                                        <color key="tintColor" red="0.12156862745098039" green="0.24313725490196078" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
                                                             <action selector="signInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nju-WE-VL5"/>
                                                         </connections>
@@ -259,5 +262,8 @@
         <image name="arrow.right.to.line" catalog="system" width="128" height="101"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="phone" catalog="system" width="128" height="115"/>
+        <namedColor name="ColorPrimary">
+            <color red="0.12156862745098039" green="0.24313725490196078" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

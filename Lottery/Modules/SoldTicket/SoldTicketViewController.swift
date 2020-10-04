@@ -18,7 +18,6 @@ class SoldTicketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initView()
-        presenter = SoldTicketPresenter(view: self)
         // Do any additional setup after loading the view.
     }
     
@@ -97,8 +96,7 @@ class SoldTicketViewController: UIViewController {
     
     func showDashBoardScreen() {
         if let vc = CommonUtils.ticketStoryboard.instantiateViewController(identifier: "DashboardViewController") as? DashboardViewController {
-            //vc.urlString = Constants.UrlManager.dashBoardApi(with: presenter?.mobileNumber ?? "", password: CommonUtils.password ?? "")
-            vc.urlString = "http://google.com"
+            vc.urlString = Constants.UrlManager.dashBoardApi(with: CommonUtils.userName ?? "", password: CommonUtils.password ?? "")
             let navigationVC = UINavigationController(rootViewController: vc)
             navigationVC.modalPresentationStyle = .fullScreen
             self.navigationController?.present(navigationVC, animated: true, completion: nil)
@@ -109,31 +107,40 @@ class SoldTicketViewController: UIViewController {
 
 extension SoldTicketViewController : ScanCodeResultDelegate {
     func scanCodeResult(result: ScanCodeResult) {
-        self.stopLoadingIndicator(indicator: indicator)
-        DispatchQueue.main.async {
-            switch result {
-            case .success(let ticketDetails):
-                self.bookletSeriesTF.text = ticketDetails.bookletSeries
-                self.bookletNumberTF.text = ticketDetails.bookletNumber
-                self.ticketNumberTF.text = ticketDetails.ticketNumber
-                self.lotIdTf.text = ticketDetails.lotId
-            default:
-                self.showOkayAlert(title: "Alert", message: "Invalid data, Please scan correct code.")
-            }
+        switch result {
+        case .success(let ticketDetails):
+            self.bookletSeriesTF.text = ticketDetails.bookletSeries
+            self.bookletNumberTF.text = ticketDetails.bookletNumber
+            self.ticketNumberTF.text = ticketDetails.ticketNumber
+            self.lotIdTf.text = ticketDetails.lotId
+        default:
+            self.showOkayAlert(title: "Alert", message: "Invalid data, Please scan correct code.")
         }
     }
     
-    func submitDetailsResult(result: Result<String>) {
-        switch result {
-        case .success(_):
-            self.clearFields()
-        case .failure(let error):
-            if let errorIs = error as? apiHandlerErrors {
-                self.showOkayAlert(title: "Error", message: errorIs.description)
-            } else {
-                self.showOkayAlert(title: "Error", message: error.localizedDescription)
+    func submitDetailsResult(result: Result<[String: Any]>) {
+        self.stopLoadingIndicator(indicator: indicator)
+        DispatchQueue.main.async {
+            switch result {
+            case .success(let responseDict):
+                if let error = responseDict["error"] as? Bool, error {
+                    if let message = responseDict["error_msg"] as? String {
+                        self.showOkayAlert(title: "Alert", message: message)
+                    } else{
+                        self.showOkayAlert(title: "Alert", message: Constants.AlertMessages.inValidaRequests)
+                    }
+                } else {
+                    self.clearFields()
+                }
+            case .failure(let error):
+                if let errorIs = error as? apiHandlerErrors {
+                    self.showOkayAlert(title: "Alert", message: errorIs.description)
+                } else {
+                    self.showOkayAlert(title: "Alert", message: error.localizedDescription)
+                }
             }
         }
+        
     }
     
     

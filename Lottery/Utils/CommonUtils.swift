@@ -11,7 +11,7 @@ import UIKit
 
 class CommonUtils {
     static let defults = UserDefaults.standard
-    static func setNavigationStyles(colour: UIColor, textTitleColour: UIColor) {
+    static func setNavigationStyles(colour: UIColor?, textTitleColour: UIColor) {
         UINavigationBar.appearance().barTintColor = colour
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().isTranslucent = false
@@ -58,8 +58,8 @@ class CommonUtils {
         return password.isEmpty ? nil: password
     }
     
-    static var userDetailsModel: UserDataModel? {
+    static var user_Id: Int? {
         let key = "\(userName ?? "")_\(password ?? "")"
-        return getValueFromDefaults(key: key) as? UserDataModel
+        return getValueFromDefaults(key: key) as? Int
     }
 }

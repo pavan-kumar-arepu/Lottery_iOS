@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3112FDC425277BAB00215541 /* SoldTicketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3112FDC325277BAB00215541 /* SoldTicketInteractor.swift */; };
 		312F717E25219A28003D1AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F717D25219A28003D1AE2 /* AppDelegate.swift */; };
 		312F718025219A28003D1AE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F717F25219A28003D1AE2 /* SceneDelegate.swift */; };
 		312F718225219A28003D1AE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312F718125219A28003D1AE2 /* LoginViewController.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3112FDC325277BAB00215541 /* SoldTicketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldTicketInteractor.swift; sourceTree = "<group>"; };
 		312F717A25219A28003D1AE2 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		312F717D25219A28003D1AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		312F717F25219A28003D1AE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				3181AE10252458EA00C66C7C /* SoldTicketViewController.swift */,
 				3181AE12252458FC00C66C7C /* SoldTicket.storyboard */,
 				3181AE1425245B8900C66C7C /* SoldTicketPresenter.swift */,
+				3112FDC325277BAB00215541 /* SoldTicketInteractor.swift */,
 				31DA8A8E252373C000F9D71A /* ScanCode */,
 				31DA8A8D252373AA00F9D71A /* GoToDashboard */,
 			);
@@ -445,6 +448,7 @@
 				316B4CC52525973A009670F5 /* QRCodeReaderViewContainer.swift in Sources */,
 				316B4CCA252597BE009670F5 /* ScanCodeViewController.swift in Sources */,
 				312F71BE25219E48003D1AE2 /* CommonUtils.swift in Sources */,
+				3112FDC425277BAB00215541 /* SoldTicketInteractor.swift in Sources */,
 				312F71AF25219A93003D1AE2 /* Reachability.swift in Sources */,
 				316B4CC82525973A009670F5 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				31DA8A8525236FF100F9D71A /* LoginRouter.swift in Sources */,

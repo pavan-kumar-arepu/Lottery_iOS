@@ -11,6 +11,7 @@ import Foundation
 struct LoginEntityModel: Codable {
     var error: Bool?
     var data: UserDataModel?
+    var error_msg: String?
 }
 struct UserDataModel: Codable {
     var created_at: String?
@@ -25,7 +26,7 @@ struct UserDataModel: Codable {
     var user_role_id: Int?
     var user_active_inactive: String?
     var state_id: Int?
-    var _id: String?
+    var _id: Int?
     enum CodingKeys: String, CodingKey {
         case _id = "id"
         case created_at, created_by, email, country_id, remember_token, user_last_name, user_mobile_number, user_role_id, user_active_inactive, state_id, entity_id

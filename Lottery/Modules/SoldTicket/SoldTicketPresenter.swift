@@ -17,17 +17,9 @@ enum SoldTicketValidationResult {
 }
 
 class SoldTicketPresenter {
-    var view: SoldTicketViewController
-    init(view: SoldTicketViewController) {
-        self.view = view
-    }
-    var userId: String {
-        return CommonUtils.userDetailsModel?._id ?? ""
-    }
+    var view: SoldTicketViewController?
+    var interactor: SoldTicketInteractor?
     
-    var mobileNumber: String {
-        return CommonUtils.userDetailsModel?.user_mobile_number ?? ""
-    }
     
     func validateTicketData(details: TiketDetails)-> SoldTicketValidationResult {
         guard !details.bookletSeries.isEmpty  else {
@@ -46,22 +38,11 @@ class SoldTicketPresenter {
     }
     
     func submitTicketDetailsApi(details: TiketDetails) {
-        //http://155.138.208.35:82/lottory/sold_tickets_api?
-        guard CommonUtils.isOnline() else {
-            self.view.submitDetailsResult(result: .failure(apiHandlerErrors.noNetWork))
-            return
-        }
-        //request params : booklet_series,booklet_number,ticket_number,lot_id,user_id
-        ApiHandler.handleApi(with: .get, urlString: Constants.UrlManager.soldTicketApi(ticketDetails: details, userId: userId), headers: ["Content-Type": "application/json", "Accept": "application/json"], parameters: nil) { result in
-            switch result {
-            case .success(let data):
-                self.view.submitDetailsResult(result: .success(""))
-            case .failure(let error):
-                self.view.submitDetailsResult(result: .failure(error))
-            }
-        }
+        self.interactor?.submitTicketDetailsApi(details: details)
     }
     
-    
+    func submitTicketResult(result: Result<[String: Any]>) {
+        self.view?.submitDetailsResult(result: result)
+    }
     
 }

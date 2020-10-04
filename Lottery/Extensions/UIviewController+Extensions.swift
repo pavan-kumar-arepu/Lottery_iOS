@@ -16,7 +16,7 @@ extension UIViewController {
         } else {
             // Fallback on earlier versions
         }
-        indicator.color = UIColor.black
+        indicator.color = UIColor.colourPrimary
         
         DispatchQueue.main.async {
             self.view.addSubview(indicator)

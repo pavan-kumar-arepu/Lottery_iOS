@@ -22,9 +22,7 @@ class DashboardViewController: UIViewController {
         if let url = URL(string: urlString) {
             let myRequest = URLRequest(url: url)
             webview.load(myRequest)
-            DispatchQueue.main.async {
-                self.indicator.showActivityIndicator(viewController: self)
-            }
+            self.startLoadingIndicator(indicator: indicator)
         }
     }
     
@@ -33,14 +31,12 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func qrCodeTapped(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.backAction()
     }
 }
 extension DashboardViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // Hide Sinner
-        DispatchQueue.main.async {
-            self.indicator.hideActivityIndicator(viewController: self)
-        }
+        self.stopLoadingIndicator(indicator: indicator)
     }
 }

@@ -24,7 +24,7 @@ struct Constants {
         static let dashBoardApi = "http://155.138.208.35:82/lottory/user_authenticte_api?"
         
         static func loginApi(with number: String, password: String)-> String {
-            return "\(loginApi)\(number)&password=\(password)"
+            return "\(loginApi)number=\(number)&password=\(password)"
         }
         
         static func soldTicketApi(ticketDetails: TiketDetails, userId: String)-> String {

@@ -48,8 +48,21 @@ extension UIColor {
         return UIColor(red: 200.0 / 255.0, green: 199.0 / 255.0, blue: 204.0 / 255.0, alpha: 1.0)
     }
     
-    @nonobjc class var navigationHeader: UIColor {
-        return UIColor(red: 38.0 / 255.0, green: 61.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)
+    @nonobjc class var navigationHeader: UIColor? {
+        return UIColor.init(named: "ColorPrimary")
+        //return UIColor(red: 38.0 / 255.0, green: 61.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var colourPrimary: UIColor? {
+        return UIColor.init(named: "ColorPrimary")
+    }
+    
+    @nonobjc class var colourPrimaryDark: UIColor? {
+        return UIColor.init(named: "ColorPrimaryDark")
+    }
+    
+    @nonobjc class var colourAccesnt: UIColor? {
+        return UIColor.init(named: "ColorAccent")
     }
     
     func ColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {

@@ -37,8 +37,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signInAction(_ sender: Any) {
-        self.loginApiResult(result: .success(LoginEntityModel(error: false, data: nil)))
-        return
         let validationResult = presenter?.inputs.signInTapped(userName: mobileNumberTf.text, password: passwordTf.text)
         switch  validationResult {
         case .success:
@@ -79,7 +77,7 @@ extension LoginViewController: LoginPresenterToViewProtocol {
                 if response.error == false {
                     self.showTicketScreen()
                 } else {
-                    self.showOkayAlert(title: "Error", message: "Login Failed, Please try againe.")
+                    self.showOkayAlert(title: "Error", message: response.error_msg ?? "Login Failed, Please try againe.")
                 }
             case .failure(let error):
                 if let errorIs = error as? apiHandlerErrors {

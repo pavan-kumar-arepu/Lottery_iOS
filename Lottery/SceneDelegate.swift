@@ -32,10 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func validateUser()-> UIViewController {
         if CommonUtils.userName != nil {
-            guard let vc = CommonUtils.ticketStoryboard.instantiateViewController(identifier: "SoldTicketViewController")as? SoldTicketViewController else{
-                preconditionFailure("Unable to get ViewController")
-            }
-            return vc
+            return SoldTicketRouter.createLoginModule()
         } else {
             return LoginRouter.createLoginModule()
         }
