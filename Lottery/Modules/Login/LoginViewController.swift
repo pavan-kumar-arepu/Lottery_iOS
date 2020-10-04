@@ -69,15 +69,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension LoginViewController: LoginPresenterToViewProtocol {
-    func loginApiResult(result: Result<LoginEntityModel>) {
+    func loginApiResult(result: Result<[String: Any]>) {
         self.stopIndicator(indicator: indicator)
         DispatchQueue.main.async {
             switch result {
             case .success(let response):
-                if response.error == false {
+                if let error = response[LoginResponseKeys.error.rawValue] as? Bool, error == false {
                     self.showTicketScreen()
                 } else {
-                    self.showOkayAlert(title: "Error", message: response.error_msg ?? "Login Failed, Please try againe.")
+                    self.showOkayAlert(title: "Error", message: response[LoginResponseKeys.error_msg.rawValue] as? String ?? "Login Failed, Please try againe.")
                 }
             case .failure(let error):
                 if let errorIs = error as? apiHandlerErrors {

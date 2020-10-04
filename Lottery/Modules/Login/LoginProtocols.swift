@@ -13,7 +13,7 @@ protocol LoginViewToPresenterProtocol: class {
 }
 
 protocol LoginPresenterToViewProtocol: class {
-    func loginApiResult(result: Result<LoginEntityModel>)
+    func loginApiResult(result: Result<[String: Any]>)
 }
 
 protocol LoginPresenterToInteractor: class {
@@ -21,7 +21,7 @@ protocol LoginPresenterToInteractor: class {
 }
 
 protocol LoginInteractorToPresenter: class {
-    func loginApiResult(result: Result<LoginEntityModel>)
+    func loginApiResult(result: Result<[String: Any]>)
 }
 
 enum LoginValidationFields {

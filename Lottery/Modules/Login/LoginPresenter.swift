@@ -31,7 +31,7 @@ class LoginPresenter: LoginViewToPresenterProtocol, LoginInteractorToPresenter {
         self.interactor?.loginApi(using: mobileNumbver, password: password)
     }
     
-    func loginApiResult(result: Result<LoginEntityModel>) {
+    func loginApiResult(result: Result<[String: Any]>) {
         self.view?.loginApiResult(result: result)
     }
     

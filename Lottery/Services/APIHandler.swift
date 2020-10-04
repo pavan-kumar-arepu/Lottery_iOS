@@ -46,7 +46,7 @@ class ApiHandler {
             return
         }
         let url = NSURL(string: urlString)
-        let request = NSMutableURLRequest(url: url! as URL, cachePolicy:.useProtocolCachePolicy, timeoutInterval: 10.0)
+        let request = NSMutableURLRequest(url: url! as URL, cachePolicy:.useProtocolCachePolicy, timeoutInterval: 30.0)
         request.addValues(values: headers)
         request.httpMethod = httpMethode.rawValue
         if let parametrs = parameters {

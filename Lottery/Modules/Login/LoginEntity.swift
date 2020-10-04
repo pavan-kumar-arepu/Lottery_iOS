@@ -32,3 +32,10 @@ struct UserDataModel: Codable {
         case created_at, created_by, email, country_id, remember_token, user_last_name, user_mobile_number, user_role_id, user_active_inactive, state_id, entity_id
     }
 }
+enum LoginResponseKeys: String {
+    case error, data, error_msg
+    enum DataKeys: String {
+        case _id
+        case user_mobile_number
+    }
+}
