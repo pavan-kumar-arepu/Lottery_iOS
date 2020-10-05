@@ -90,9 +90,7 @@ extension LoginViewController: LoginPresenterToViewProtocol {
     }
     
     func showTicketScreen() {
-        guard let soldTicketVC = CommonUtils.ticketStoryboard.instantiateViewController(identifier: "SoldTicketViewController") as? SoldTicketViewController else{
-            preconditionFailure("Unable to get LoginViewController")
-        }
+        let soldTicketVC = SoldTicketRouter.createLoginModule()
         self.navigationController?.pushViewController(soldTicketVC, animated: true)
     }
     
