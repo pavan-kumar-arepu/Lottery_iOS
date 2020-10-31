@@ -89,7 +89,7 @@ class ScanCodeViewController: UIViewController {
          let barcodeData = value.components(separatedBy: ",")
         self.dismiss(animated: true) {
             if barcodeData.count == 4 {
-                let ticketDetails = TiketDetails(bookletSeries: barcodeData[0], bookletNumber: barcodeData[1], ticketNumber: barcodeData[1], lotId: barcodeData[3])
+                let ticketDetails = TiketDetails(bookletSeries: barcodeData[0], bookletNumber: barcodeData[1], ticketNumber: barcodeData[2], lotId: barcodeData[3])
                 self.delegate?.scanCodeResult(result: .success(ticketDetails))
             }else {
                 self.delegate?.scanCodeResult(result: .invaliddata)

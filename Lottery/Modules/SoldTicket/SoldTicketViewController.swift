@@ -27,6 +27,7 @@ class SoldTicketViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.clearBorderColour()
+        self.clearFields()
     }
     
     func initView() {
